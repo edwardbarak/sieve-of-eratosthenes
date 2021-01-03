@@ -1,12 +1,12 @@
 def sieve(end):
     potentialPrimes = set(range(2, end+1))
     primes = []
-    i = list(potentialPrimes)[0]
+    i = next(iter(potentialPrimes))
 
     while i**2 < end:
         primes.append(i)
         potentialPrimes = potentialPrimes.difference(set(range(i, end+1, i)))
-        i = list(potentialPrimes)[0]
+        i = next(iter(potentialPrimes))
     return primes + list(potentialPrimes)
 
 if __name__ == "__main__":
